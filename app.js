@@ -1444,18 +1444,27 @@ function renderManagement() {
 
   Object.entries(typeInfo).forEach(([type, translations]) => {
     const info = translations[state.lang];
-    const card = document.createElement("article");
+    const card = document.createElement("details");
     card.className = "management-card";
     card.innerHTML = `
-      <div class="management-card-header">
-        <span class="type-number">${type}</span>
+      <summary class="management-card-header">
+        <span class="type-number" aria-hidden="true">${type}</span>
         <div>
           <h2>${info.name}</h2>
           <p>${info.short}</p>
         </div>
+        <span class="accordion-indicator" aria-hidden="true"></span>
+      </summary>
+      <div class="management-card-body">
+        ${renderGuideSections(type)}
       </div>
-      ${renderGuideSections(type)}
     `;
+    card.addEventListener("toggle", () => {
+      if (!card.open) return;
+      els.managementDirectory.querySelectorAll(".management-card[open]").forEach((openCard) => {
+        if (openCard !== card) openCard.open = false;
+      });
+    });
     els.managementDirectory.appendChild(card);
   });
 }

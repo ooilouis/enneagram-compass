@@ -588,8 +588,9 @@ button {
 
 .management-directory {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 16px;
+  max-width: 920px;
 }
 
 .type-card,
@@ -607,6 +608,7 @@ button {
 }
 
 .management-card {
+  min-height: 0;
   overflow: hidden;
   padding: 0;
   background: rgba(255, 253, 248, 0.92);
@@ -622,6 +624,65 @@ button {
   padding: clamp(16px, 3vw, 24px);
   cursor: pointer;
   list-style: none;
+}
+
+.type-visual {
+  display: grid;
+  height: 230px;
+  margin: calc(clamp(18px, 3vw, 28px) * -1) calc(clamp(18px, 3vw, 28px) * -1) 18px;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(255, 253, 248, 0.95), transparent 34%),
+    linear-gradient(145deg, color-mix(in srgb, var(--avatar-accent) 20%, #fffdf8), color-mix(in srgb, var(--avatar-jacket) 18%, #eef5f1));
+  border-bottom: 1px solid var(--line);
+}
+
+.type-visual svg {
+  width: min(88%, 230px);
+  height: auto;
+  filter: drop-shadow(0 20px 24px rgba(23, 33, 33, 0.18));
+  transform: translateY(8px);
+  transition: transform 0.24s ease;
+}
+
+.type-card:hover .type-visual svg {
+  transform: translateY(0) scale(1.02);
+}
+
+.avatar-line {
+  fill: none;
+  stroke: var(--avatar-accent);
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.avatar-hand {
+  fill: #ffd3b5;
+  stroke: var(--avatar-accent);
+  stroke-width: 4;
+}
+
+.avatar-badge {
+  fill: #fffdf8;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.type-card-title {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.type-card-title .type-number {
+  flex: 0 0 auto;
+}
+
+.type-card-title h2 {
+  margin-top: 3px;
 }
 
 .management-card-header::-webkit-details-marker {
@@ -754,6 +815,24 @@ button {
   background: var(--blue);
   border-radius: var(--radius);
   font-weight: 900;
+}
+
+.accordion-close-btn {
+  width: 100%;
+  min-height: 46px;
+  margin-top: 16px;
+  color: var(--surface);
+  background: var(--ink);
+  border: 0;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 900;
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.accordion-close-btn:hover {
+  transform: translateY(-1px);
+  background: var(--forest);
 }
 
 .type-number {

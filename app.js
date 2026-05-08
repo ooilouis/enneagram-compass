@@ -670,6 +670,73 @@ const pizzaDimensions = {
   ],
 };
 
+const typeVisuals = {
+  1: { hair: "#b9a7e7", jacket: "#f6f0df", accent: "#d7a642", badge: "1", pose: "point" },
+  2: { hair: "#5b352f", jacket: "#ffd8e6", accent: "#e8648d", badge: "LOVE", pose: "heart" },
+  3: { hair: "#202020", jacket: "#181a20", accent: "#d7a642", badge: "WIN", pose: "fist" },
+  4: { hair: "#27213d", jacket: "#251a34", accent: "#8f4bd8", badge: "ART", pose: "chin" },
+  5: { hair: "#151923", jacket: "#f0eef6", accent: "#6d55a8", badge: "DATA", pose: "tablet" },
+  6: { hair: "#14161d", jacket: "#1f5fbd", accent: "#6da6ff", badge: "65", pose: "guard" },
+  7: { hair: "#ef7f99", jacket: "#078988", accent: "#ffbf3f", badge: "WOW", pose: "peace" },
+  8: { hair: "#291414", jacket: "#15161d", accent: "#d84a45", badge: "8", pose: "cross" },
+  9: { hair: "#42251f", jacket: "#4e7a63", accent: "#d7a642", badge: "CALM", pose: "calm" },
+};
+
+function renderTypeAvatar(type, name) {
+  const visual = typeVisuals[type];
+  const armLeft =
+    visual.pose === "heart"
+      ? '<path d="M58 142 C82 118 104 118 126 142" class="avatar-line"/>'
+      : visual.pose === "point"
+        ? '<path d="M64 148 C53 116 57 88 69 59" class="avatar-line"/><circle cx="70" cy="56" r="7" class="avatar-hand"/>'
+        : visual.pose === "peace"
+          ? '<path d="M64 147 C51 122 50 98 66 78" class="avatar-line"/><path d="M66 78 L56 56 M67 78 L76 55" class="avatar-line"/>'
+          : visual.pose === "cross"
+            ? '<path d="M45 139 C78 125 113 125 147 139" class="avatar-line"/>'
+            : '<path d="M58 148 C70 132 86 127 104 133" class="avatar-line"/>';
+  const armRight =
+    visual.pose === "tablet"
+      ? '<rect x="111" y="118" width="50" height="62" rx="8" fill="#30313a"/><path d="M122 132h27M122 146h22M122 160h30" stroke="#8f82cf" stroke-width="4" stroke-linecap="round"/>'
+      : visual.pose === "fist"
+        ? '<path d="M135 150 C144 128 143 108 128 88" class="avatar-line"/><circle cx="126" cy="86" r="11" class="avatar-hand"/>'
+        : visual.pose === "guard"
+          ? '<path d="M137 149 C126 135 123 119 132 101" class="avatar-line"/><circle cx="133" cy="99" r="10" class="avatar-hand"/>'
+          : visual.pose === "calm"
+            ? '<path d="M137 146 C126 134 112 129 96 134" class="avatar-line"/>'
+            : "";
+
+  return `
+    <div class="type-visual" style="--avatar-hair: ${visual.hair}; --avatar-jacket: ${visual.jacket}; --avatar-accent: ${visual.accent}" role="img" aria-label="${name} avatar">
+      <svg viewBox="0 0 220 220" aria-hidden="true">
+        <defs>
+          <radialGradient id="avatarGlow${type}" cx="50%" cy="30%" r="72%">
+            <stop offset="0" stop-color="#fffdf8"/>
+            <stop offset="0.56" stop-color="${visual.accent}" stop-opacity="0.16"/>
+            <stop offset="1" stop-color="${visual.jacket}" stop-opacity="0.2"/>
+          </radialGradient>
+        </defs>
+        <circle cx="110" cy="110" r="104" fill="url(#avatarGlow${type})"/>
+        <path d="M52 188 C60 142 80 118 110 118 C140 118 160 142 168 188 Z" fill="var(--avatar-jacket)"/>
+        <path d="M70 180 L82 126 M150 180 L138 126" stroke="var(--avatar-accent)" stroke-width="7" stroke-linecap="round"/>
+        <circle cx="110" cy="84" r="46" fill="#ffd3b5"/>
+        <path d="M67 83 C67 43 96 24 126 31 C154 37 171 59 160 96 C145 76 121 66 91 72 C80 74 73 78 67 83Z" fill="var(--avatar-hair)"/>
+        <path d="M77 65 C92 32 129 28 154 54 C137 48 113 50 94 63 C86 69 80 72 77 65Z" fill="#ffffff" opacity="0.22"/>
+        <circle cx="94" cy="89" r="8" fill="#191919"/>
+        <circle cx="126" cy="89" r="8" fill="#191919"/>
+        <circle cx="96" cy="86" r="3" fill="#fff"/>
+        <circle cx="128" cy="86" r="3" fill="#fff"/>
+        <circle cx="78" cy="102" r="7" fill="#ee8d8d" opacity="0.35"/>
+        <circle cx="142" cy="102" r="7" fill="#ee8d8d" opacity="0.35"/>
+        <path d="M98 112 C106 119 116 119 124 112" fill="none" stroke="#9b4f48" stroke-width="4" stroke-linecap="round"/>
+        ${armLeft}
+        ${armRight}
+        <rect x="84" y="150" width="52" height="24" rx="12" fill="var(--avatar-accent)"/>
+        <text x="110" y="166" text-anchor="middle" class="avatar-badge">${visual.badge}</text>
+      </svg>
+    </div>
+  `;
+}
+
 const typeInfo = {
   1: {
     en: {
@@ -1420,9 +1487,14 @@ function renderTypes() {
     const card = document.createElement("article");
     card.className = "type-card";
     card.innerHTML = `
-      <span class="type-number">${type}</span>
-      <h2>${info.name}</h2>
-      <p>${info.short}</p>
+      ${renderTypeAvatar(type, info.name)}
+      <div class="type-card-title">
+        <span class="type-number">${type}</span>
+        <div>
+          <h2>${info.name}</h2>
+          <p>${info.short}</p>
+        </div>
+      </div>
       <div class="detail-list">
         <div class="detail-item"><strong>${labels.desire}</strong><span>${info.desire}</span></div>
         <div class="detail-item"><strong>${labels.fear}</strong><span>${info.fear}</span></div>
@@ -1446,6 +1518,7 @@ function renderManagement() {
     const info = translations[state.lang];
     const card = document.createElement("details");
     card.className = "management-card";
+    card.setAttribute("name", "management-guide");
     card.innerHTML = `
       <summary class="management-card-header">
         <span class="type-number" aria-hidden="true">${type}</span>
@@ -1457,8 +1530,19 @@ function renderManagement() {
       </summary>
       <div class="management-card-body">
         ${renderGuideSections(type)}
+        <button class="accordion-close-btn" type="button">${state.lang === "zh" ? "收起" : "Close"}</button>
       </div>
     `;
+    card.querySelector(".accordion-close-btn").addEventListener("click", () => {
+      card.open = false;
+      card.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    });
+    card.querySelector("summary").addEventListener("click", () => {
+      if (card.open) return;
+      els.managementDirectory.querySelectorAll(".management-card[open]").forEach((openCard) => {
+        openCard.open = false;
+      });
+    });
     card.addEventListener("toggle", () => {
       if (!card.open) return;
       els.managementDirectory.querySelectorAll(".management-card[open]").forEach((openCard) => {

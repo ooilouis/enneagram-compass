@@ -9,7 +9,7 @@ const copy = {
     tabManage: "Management Guide",
     introTitle: "Find your Enneagram pattern with a focused, reflective test.",
     introBody:
-      "Answer 150 quick statements in a shuffled deck, so the test feels fresher and your answers stay more instinctive.",
+      "Answer 150 quick statements and get a practical profile with personality, management, and career guidance.",
     questionsLabel: "questions",
     typesLabel: "types",
     startTest: "Start",
@@ -51,11 +51,11 @@ const copy = {
       "Strongly agree",
     ],
     funNotes: [
-      "Fresh card from the shuffled deck.",
-      "No pattern-spotting. Just answer honestly.",
+      "Quick instinct check.",
+      "No need to overthink it. Just answer honestly.",
       "Tiny instinct check, big personality clue.",
       "Go with your first real reaction.",
-      "The deck is mixing work, stress, and relationship clues.",
+      "This one looks at work, stress, or relationship patterns.",
       "Nice pace. Keep it light and honest.",
     ],
     detailLabels: {
@@ -77,7 +77,7 @@ const copy = {
     tabTypes: "人格类型",
     tabManage: "管理指南",
     introTitle: "用一套专注的反思测试，找出你的九型人格模式。",
-    introBody: "回答150道已洗牌的简短陈述，让测试更有新鲜感，也让你的答案更接近直觉反应。",
+    introBody: "回答150道简短陈述，获得包含人格、管理沟通和职业建议的实用分析。",
     questionsLabel: "道题",
     typesLabel: "类型",
     startTest: "开始",
@@ -110,11 +110,11 @@ const copy = {
       "请把结果当成自我观察地图，而不是固定标签。建议阅读前三高类型，比较哪一种核心恐惧最熟悉，也观察自己在放松和压力下的差异。",
     answers: ["非常不同意", "不同意", "普通", "同意", "非常同意"],
     funNotes: [
-      "从洗好的题卡抽出这一题。",
+      "快速直觉检查。",
       "不用猜类型，诚实回答就好。",
       "小小直觉反应，可能藏着大线索。",
       "跟着第一真实反应走。",
-      "题卡正在混合工作、压力和关系线索。",
+      "这一题可能在看工作、压力或关系模式。",
       "节奏不错，轻松但诚实地答。",
     ],
     detailLabels: {
@@ -1174,10 +1174,10 @@ function renderQuestion() {
 
   if (state.lang === "zh") {
     els.progressLabel.textContent = `${langCopy.question}${state.current + 1}${langCopy.of}${TOTAL_QUESTIONS}题`;
-    els.questionKicker.textContent = `${langCopy.question}${state.current + 1}题 - 已洗牌`;
+    els.questionKicker.textContent = `${langCopy.question}${state.current + 1}题`;
   } else {
     els.progressLabel.textContent = `${langCopy.question} ${state.current + 1} ${langCopy.of} ${TOTAL_QUESTIONS}`;
-    els.questionKicker.textContent = `${langCopy.question} ${state.current + 1} - shuffled`;
+    els.questionKicker.textContent = `${langCopy.question} ${state.current + 1}`;
   }
 
   els.progressPercent.textContent = `${progress}%`;

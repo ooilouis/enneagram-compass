@@ -627,6 +627,7 @@ button {
 }
 
 .type-visual {
+  position: relative;
   display: grid;
   height: 230px;
   margin: calc(clamp(18px, 3vw, 28px) * -1) calc(clamp(18px, 3vw, 28px) * -1) 18px;
@@ -638,37 +639,53 @@ button {
   border-bottom: 1px solid var(--line);
 }
 
-.type-visual svg {
-  width: min(88%, 230px);
-  height: auto;
+.type-visual img {
+  position: relative;
+  z-index: 1;
+  width: min(88%, 260px);
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
   filter: drop-shadow(0 20px 24px rgba(23, 33, 33, 0.18));
-  transform: translateY(8px);
-  transition: transform 0.24s ease;
+  opacity: 0;
+  transform: translateY(10px) scale(0.98);
+  transition: opacity 0.24s ease, transform 0.24s ease;
 }
 
-.type-card:hover .type-visual svg {
-  transform: translateY(0) scale(1.02);
+.type-visual.image-loaded img {
+  opacity: 1;
 }
 
-.avatar-line {
-  fill: none;
-  stroke: var(--avatar-accent);
-  stroke-width: 10;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.type-card:hover .type-visual.image-loaded img {
+  transform: translateY(0) scale(1.03);
 }
 
-.avatar-hand {
-  fill: #ffd3b5;
-  stroke: var(--avatar-accent);
-  stroke-width: 4;
+.type-visual-fallback {
+  position: absolute;
+  display: grid;
+  width: 128px;
+  height: 128px;
+  place-items: center;
+  color: var(--surface);
+  background: var(--avatar-accent);
+  border-radius: 50%;
+  box-shadow: 0 18px 34px rgba(23, 33, 33, 0.12);
 }
 
-.avatar-badge {
-  fill: #fffdf8;
-  font-size: 11px;
-  font-weight: 900;
+.type-visual-fallback span {
+  font-size: 3.3rem;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.type-visual-fallback strong {
+  margin-top: -30px;
+  font-size: 0.75rem;
   letter-spacing: 0;
+}
+
+.type-visual.image-loaded .type-visual-fallback {
+  display: none;
 }
 
 .type-card-title {

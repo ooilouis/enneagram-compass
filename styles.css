@@ -147,6 +147,7 @@ button {
 .tabs {
   width: fit-content;
   margin-bottom: 28px;
+  flex-wrap: wrap;
 }
 
 .tab-panel {
@@ -436,6 +437,10 @@ button {
     var(--surface);
 }
 
+.result-management-panel {
+  grid-column: 1 / -1;
+}
+
 .pizza-index {
   display: grid;
   gap: 18px;
@@ -555,16 +560,124 @@ button {
   gap: 16px;
 }
 
-.type-card {
+.management-directory {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.type-card,
+.management-card {
   display: flex;
   flex-direction: column;
   min-height: 100%;
   transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
-.type-card:hover {
+.type-card:hover,
+.management-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 22px 58px rgba(23, 33, 33, 0.13);
+}
+
+.management-card {
+  padding: clamp(18px, 3vw, 28px);
+  background: rgba(255, 253, 248, 0.92);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 16px 46px rgba(23, 33, 33, 0.09);
+}
+
+.management-card-header {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.management-card-header h2 {
+  margin: 0 0 6px;
+  font-size: 1.32rem;
+}
+
+.management-card-header p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.guide-section {
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.guide-section strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.guide-section p,
+.guide-section ul {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.guide-section ul {
+  padding-left: 19px;
+}
+
+.guide-section li + li {
+  margin-top: 6px;
+}
+
+.guide-section-self {
+  margin-top: 2px;
+  padding: 14px;
+  background: #f4efe6;
+  border: 1px solid rgba(23, 33, 33, 0.08);
+  border-radius: var(--radius);
+}
+
+.guide-section-career {
+  padding: 14px;
+  background: rgba(49, 92, 140, 0.08);
+  border: 1px solid rgba(49, 92, 140, 0.12);
+  border-radius: var(--radius);
+}
+
+.job-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.job-tags span {
+  display: inline-flex;
+  min-height: 30px;
+  align-items: center;
+  padding: 5px 9px;
+  color: var(--ink);
+  background: #eef5f1;
+  border: 1px solid rgba(23, 33, 33, 0.08);
+  border-radius: var(--radius);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.result-type-chip {
+  display: inline-flex;
+  margin-bottom: 12px;
+  padding: 8px 10px;
+  color: var(--surface);
+  background: var(--blue);
+  border-radius: var(--radius);
+  font-weight: 900;
 }
 
 .type-number {
@@ -728,12 +841,15 @@ button {
 @media (max-width: 900px) {
   .test-hero,
   .result-grid,
-  .type-directory {
+  .type-directory,
+  .management-directory {
     grid-template-columns: 1fr;
   }
 
-  .pizza-panel {
+  .pizza-panel,
+  .result-management-panel {
     grid-row: auto;
+    grid-column: auto;
   }
 
   .test-hero {

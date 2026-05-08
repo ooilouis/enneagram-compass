@@ -36,6 +36,7 @@
         <nav class="tabs" aria-label="Primary">
           <button class="tab-btn active" data-tab="test" type="button" data-i18n="tabTest">Test</button>
           <button class="tab-btn" data-tab="types" type="button" data-i18n="tabTypes">Personality Types</button>
+          <button class="tab-btn" data-tab="manage" type="button" data-i18n="tabManage">Management Guide</button>
         </nav>
 
         <section class="tab-panel active" id="test-panel">
@@ -104,6 +105,10 @@
                 <p id="result-guidance"></p>
                 <button class="primary-btn" id="retake-btn" type="button" data-i18n="retake">Retake test</button>
               </div>
+              <div class="score-panel result-management-panel">
+                <h3 data-i18n="resultManageTitle">How to work with this type</h3>
+                <div id="result-management"></div>
+              </div>
             </div>
           </section>
         </section>
@@ -118,6 +123,18 @@
             </div>
           </div>
           <div class="type-directory" id="type-directory"></div>
+        </section>
+
+        <section class="tab-panel" id="manage-panel">
+          <div class="types-heading">
+            <div>
+              <h1 data-i18n="manageTitle">Management communication guide</h1>
+              <p data-i18n="manageIntro">
+                Practical workplace advice for leading, giving feedback, handling conflict, and improving if this is your own type.
+              </p>
+            </div>
+          </div>
+          <div class="management-directory" id="management-directory"></div>
         </section>
       </main>
     </div>

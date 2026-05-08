@@ -6,6 +6,7 @@ const copy = {
     appSub: "150-question personality test",
     tabTest: "Test",
     tabTypes: "Personality Types",
+    tabManage: "Management Guide",
     introTitle: "Find your Enneagram pattern with a focused, reflective test.",
     introBody:
       "Answer 150 quick statements. Your result highlights your strongest type, likely wing, and next closest patterns.",
@@ -24,6 +25,17 @@ const copy = {
     typesTitle: "Explore all 9 Enneagram types",
     typesIntro:
       "Learn the core motivation, strengths, blind spots, growth direction, and relationship style of each type.",
+    manageTitle: "Management communication guide",
+    manageIntro:
+      "Practical workplace advice for leading, giving feedback, handling conflict, and improving if this is your own type.",
+    resultManageTitle: "How to work with this type",
+    communicateLabel: "How to communicate",
+    manageLabel: "Management perspective",
+    feedbackLabel: "Feedback style",
+    conflictLabel: "Conflict note",
+    selfImproveLabel: "If this is you",
+    careerLabel: "Career advice",
+    suitableJobsLabel: "Suitable job examples",
     question: "Question",
     of: "of",
     resultPrefix: "Your strongest pattern is",
@@ -55,6 +67,7 @@ const copy = {
     appSub: "150题人格测试",
     tabTest: "测试",
     tabTypes: "人格类型",
+    tabManage: "管理指南",
     introTitle: "用一套专注的反思测试，找出你的九型人格模式。",
     introBody: "回答150道简短陈述。结果会显示你的主要类型、可能翼型，以及最接近的几个模式。",
     questionsLabel: "道题",
@@ -70,6 +83,16 @@ const copy = {
     retake: "重新测试",
     typesTitle: "了解全部9种九型人格",
     typesIntro: "查看每种类型的核心动机、优势、盲点、成长方向，以及工作和关系中的表现。",
+    manageTitle: "管理沟通指南",
+    manageIntro: "从管理角度了解如何带领、反馈、处理冲突，以及如果你是这个类型该如何成长。",
+    resultManageTitle: "如何与这个类型共事",
+    communicateLabel: "如何沟通",
+    manageLabel: "管理角度",
+    feedbackLabel: "反馈方式",
+    conflictLabel: "冲突提醒",
+    selfImproveLabel: "如果你是这个类型",
+    careerLabel: "职业建议",
+    suitableJobsLabel: "适合工作例子",
     question: "第",
     of: "题，共",
     resultPrefix: "你最明显的模式是",
@@ -226,6 +249,390 @@ const typeDeepDive = {
       stress: "压力下，9号可能麻木、拖延决定，并融入别人的优先事项里。",
       gift: "他们的隐藏天赋是稳定的包容：能同时容纳多种观点，也让人感到被看见。",
       practice: "每天让一个小偏好被看见：选择地点、时间、顺序，或答案。",
+    },
+  },
+};
+
+const managementGuide = {
+  1: {
+    en: {
+      communicate: [
+        "Be accurate, prepared, and respectful of standards.",
+        "Show the reasoning behind a decision instead of saying 'just trust me.'",
+        "Acknowledge what is correct before discussing what needs to change.",
+      ],
+      manage: [
+        "Give clear expectations, quality criteria, and ownership boundaries.",
+        "Invite them to improve the process, but protect them from carrying every flaw alone.",
+        "Do not reward perfectionism with unlimited extra work.",
+      ],
+      feedback: "Use specific, fair feedback. Separate the person from the mistake and name the better standard clearly.",
+      conflict: "They may sound corrective when they are anxious. Stay calm, focus on the issue, and avoid mocking their concern.",
+      self: [
+        "Practice saying what you prefer before resentment builds.",
+        "Choose progress over perfect control in low-risk situations.",
+        "Let rest be part of responsibility, not a reward after everything is fixed.",
+      ],
+    },
+    zh: {
+      communicate: ["准确、有准备，并尊重标准。", "说明决定背后的理由，不要只说“相信我就好”。", "先承认做对的部分，再讨论需要改变的地方。"],
+      manage: ["给清楚期待、品质标准和责任边界。", "邀请他们改善流程，但不要让他们独自背起所有问题。", "不要用无限加班奖励他们的完美主义。"],
+      feedback: "反馈要具体、公平。把人和错误分开，并清楚说明更好的标准。",
+      conflict: "他们焦虑时可能听起来爱纠正。保持冷静，聚焦问题，不要嘲笑他们的担心。",
+      self: ["在不满累积前先说出偏好。", "在低风险情境练习选择进步，而不是完美掌控。", "把休息当成责任的一部分，不要等一切修好才允许自己休息。"],
+    },
+  },
+  2: {
+    en: {
+      communicate: [
+        "Start with warmth and genuine appreciation.",
+        "Ask directly what they need instead of assuming their help means they are fine.",
+        "Be kind, but do not be vague; unclear signals make them over-read the relationship.",
+      ],
+      manage: [
+        "Define role boundaries so helping does not become invisible extra labor.",
+        "Recognize their relational work publicly and fairly.",
+        "Encourage them to prioritize, not only support everyone else.",
+      ],
+      feedback: "Give feedback with reassurance of the relationship, then be direct about the behavior to adjust.",
+      conflict: "They may feel rejected before they feel angry. Keep connection visible while discussing the issue.",
+      self: [
+        "Ask for what you need without turning it into a hint.",
+        "Say no early while you still feel warm.",
+        "Let people care for you without needing to earn it first.",
+      ],
+    },
+    zh: {
+      communicate: ["先用温暖和真诚欣赏开始。", "直接问他们需要什么，不要以为他们愿意帮忙就代表没事。", "可以温和，但不要含糊；模糊信号会让他们过度解读关系。"],
+      manage: ["设定角色边界，避免帮助变成看不见的额外劳动。", "公开且公平地认可他们的关系维护工作。", "鼓励他们排优先级，不只是支持所有人。"],
+      feedback: "反馈时先让关系保持安全，然后直接说明需要调整的行为。",
+      conflict: "他们可能先感到被拒绝，之后才感到愤怒。讨论问题时要让连接仍然可见。",
+      self: ["直接提出自己的需要，不要只暗示。", "在还保持温暖时早点说不。", "允许别人照顾你，不需要先证明自己值得。"],
+    },
+  },
+  3: {
+    en: {
+      communicate: [
+        "Be concise, goal-oriented, and clear about success metrics.",
+        "Respect their time; connect discussion to outcomes and priorities.",
+        "Include the human truth, not only performance language.",
+      ],
+      manage: [
+        "Give measurable goals and enough autonomy to execute.",
+        "Reward honest learning, not only polished wins.",
+        "Watch for overwork hidden behind confidence.",
+      ],
+      feedback: "Frame feedback as a path to higher effectiveness, but include direct honesty about image-management or shortcuts.",
+      conflict: "They may move into solution mode too fast. Slow the conversation enough to include feelings and impact.",
+      self: [
+        "Separate your worth from the scoreboard.",
+        "Tell one trusted person what is actually hard, not only what is impressive.",
+        "Schedule recovery before burnout forces it.",
+      ],
+    },
+    zh: {
+      communicate: ["简洁、目标导向，并说清楚成功指标。", "尊重他们的时间，把讨论连接到结果和优先事项。", "加入真实的人性部分，不要只谈表现语言。"],
+      manage: ["给可衡量目标，并给予足够自主执行空间。", "奖励诚实学习，而不只是漂亮成果。", "留意他们用自信隐藏过度工作。"],
+      feedback: "把反馈表达成提升效能的路径，同时诚实指出形象管理或捷径问题。",
+      conflict: "他们可能太快进入解决模式。放慢对话，让感受和影响也被看见。",
+      self: ["把自我价值和成绩板分开。", "告诉一个可信任的人真正困难的部分，而不只是亮眼成果。", "在倦怠逼你停下前，先安排恢复。"],
+    },
+  },
+  4: {
+    en: {
+      communicate: [
+        "Be real and specific; generic praise feels thin.",
+        "Make space for emotional nuance without letting the meeting lose direction.",
+        "Do not flatten their individuality when asking for alignment.",
+      ],
+      manage: [
+        "Give creative ownership with clear deliverables.",
+        "Use their sensitivity to improve customer, brand, or team experience.",
+        "Balance emotional processing with deadlines and next actions.",
+      ],
+      feedback: "Name the value of their originality, then describe the concrete change needed.",
+      conflict: "They may withdraw when misunderstood. Reflect the feeling first, then return to facts and commitments.",
+      self: [
+        "Act on ordinary next steps even when the mood is not perfect.",
+        "Check whether envy is pointing to a real desire you can pursue.",
+        "Let belonging be simple; you do not need to be exceptional to be included.",
+      ],
+    },
+    zh: {
+      communicate: ["真实且具体；泛泛称赞会显得很薄。", "给情绪细节空间，但不要让会议失去方向。", "要求一致时，不要压扁他们的独特性。"],
+      manage: ["给创意所有权，同时设定清楚交付物。", "运用他们的敏感度改善客户、品牌或团队体验。", "在情绪处理、期限和下一步行动之间取得平衡。"],
+      feedback: "先说出他们原创性的价值，再描述需要改变的具体部分。",
+      conflict: "他们觉得不被理解时可能退缩。先反映感受，再回到事实和承诺。",
+      self: ["即使心情不完美，也先做普通的下一步。", "检查羡慕是否指向一个你可以追求的真实渴望。", "让归属感简单一点；你不需要很特别才值得被包含。"],
+    },
+  },
+  5: {
+    en: {
+      communicate: [
+        "Send context in advance and give time to think.",
+        "Be precise with questions; avoid emotional pressure as the main argument.",
+        "Respect privacy and energy limits.",
+      ],
+      manage: [
+        "Protect focus time and reduce unnecessary meetings.",
+        "Ask for visible milestones so research turns into usable output.",
+        "Invite their insight early, especially for complex systems or risks.",
+      ],
+      feedback: "Use calm, evidence-based feedback. Give them space to process before expecting a full response.",
+      conflict: "They may detach or go quiet. Do not chase aggressively; agree on a return time and decision point.",
+      self: [
+        "Share before the idea is complete enough to be perfect.",
+        "Use action as data, not as a threat to competence.",
+        "Let trusted people know your bandwidth instead of disappearing.",
+      ],
+    },
+    zh: {
+      communicate: ["提前发送背景，并给他们思考时间。", "问题要精准；不要把情绪压力当成主要论点。", "尊重隐私和精力限制。"],
+      manage: ["保护专注时间，减少不必要会议。", "要求可见里程碑，让研究转化成可用成果。", "在复杂系统或风险议题上，早点邀请他们提供洞察。"],
+      feedback: "用冷静、有证据的反馈。给他们处理空间，不要马上要求完整回应。",
+      conflict: "他们可能抽离或沉默。不要猛烈追问；约定回来的时间和决策点。",
+      self: ["在想法还没完美前先分享。", "把行动当成数据，而不是对能力的威胁。", "告诉可信任的人你的精力状态，而不是直接消失。"],
+    },
+  },
+  6: {
+    en: {
+      communicate: [
+        "Be transparent about risks, decisions, and what is still unknown.",
+        "Do not dismiss questions as negativity; they are often scanning for weak points.",
+        "Follow through consistently, because trust is built by repeated reliability.",
+      ],
+      manage: [
+        "Give clear plans, backup options, and decision owners.",
+        "Use their risk awareness in planning and quality checks.",
+        "Avoid sudden vague changes without explaining why.",
+      ],
+      feedback: "Be steady, specific, and non-threatening. Clarify what is secure and what needs adjustment.",
+      conflict: "They may test certainty or authority. Stay consistent and answer the real concern underneath the question.",
+      self: [
+        "Write down evidence for and against the fear before asking for reassurance.",
+        "Take one responsible step before the whole plan feels safe.",
+        "Practice trusting your own judgment in small decisions.",
+      ],
+    },
+    zh: {
+      communicate: ["对风险、决定和未知部分保持透明。", "不要把提问当成负面；他们常是在扫描薄弱点。", "稳定兑现承诺，因为信任来自重复可靠。"],
+      manage: ["给清楚计划、备用方案和决策负责人。", "把他们的风险意识用于计划和品质检查。", "避免突然且含糊的改变，除非说明原因。"],
+      feedback: "稳定、具体、不带威胁。说明哪些是安全的，哪些需要调整。",
+      conflict: "他们可能测试确定性或权威。保持一致，并回答问题底下真正的担心。",
+      self: ["在寻求保证前，写下支持和反驳恐惧的证据。", "在整个计划都安全前，先做一个负责任的小步骤。", "从小决定开始练习信任自己的判断。"],
+    },
+  },
+  7: {
+    en: {
+      communicate: [
+        "Keep energy forward-moving, but name constraints clearly.",
+        "Offer options with a decision deadline.",
+        "Use possibility language, then land it in next actions.",
+      ],
+      manage: [
+        "Give room for ideas, then require prioritization.",
+        "Pair exploration with checkpoints and finish criteria.",
+        "Do not trap them with unnecessary bureaucracy, but do hold commitments.",
+      ],
+      feedback: "Frame feedback around focus, follow-through, and impact, not around removing their enthusiasm.",
+      conflict: "They may joke, pivot, or reframe too quickly. Bring them gently back to the uncomfortable point.",
+      self: [
+        "Finish one meaningful commitment before opening three new ones.",
+        "Stay present with discomfort long enough to learn from it.",
+        "Use freedom to choose depth, not only more options.",
+      ],
+    },
+    zh: {
+      communicate: ["保持向前的能量，但清楚说明限制。", "提供选项，同时设定决定期限。", "先用可能性语言打开，再落到下一步行动。"],
+      manage: ["给点子空间，然后要求排优先级。", "把探索和检查点、完成标准配对。", "不要用不必要官僚流程困住他们，但要守住承诺。"],
+      feedback: "反馈聚焦在专注、完成和影响，而不是压掉他们的热情。",
+      conflict: "他们可能开玩笑、转移或太快重新诠释。温和地把他们带回那个不舒服的重点。",
+      self: ["在开启三个新选择前，先完成一个有意义承诺。", "在不舒服中多停留一点，好从中学习。", "用自由选择深度，而不只是选择更多选项。"],
+    },
+  },
+  8: {
+    en: {
+      communicate: [
+        "Be brief, direct, and straight to the point.",
+        "Respect honesty; if you do not know, say you do not know.",
+        "Stay engaged even when they are intense or angry.",
+      ],
+      manage: [
+        "Give autonomy, clear authority, and real responsibility.",
+        "Bring problems with proposed solutions, not vague complaints.",
+        "Do not control them through politics; be transparent about power and decisions.",
+      ],
+      feedback: "Be courageous and constructive. Say the truth clearly, then move toward solutions.",
+      conflict: "Their anger is often direct and passes quickly. Do not collapse, manipulate, or disappear; hold your ground respectfully.",
+      self: [
+        "Ask before pushing harder; intensity is not always clarity.",
+        "Let vulnerability be information, not weakness.",
+        "Use strength to protect collaboration, not only to win.",
+      ],
+    },
+    zh: {
+      communicate: ["简短、直接、切重点。", "尊重诚实；不知道就说不知道。", "即使他们强烈或生气，也要留在现场并参与。"],
+      manage: ["给自主权、清楚权限和真实责任。", "带着建议方案提出问题，不要只带模糊抱怨。", "不要用政治手段控制他们；权力和决定要透明。"],
+      feedback: "要有勇气且建设性。清楚说真话，然后走向解决方案。",
+      conflict: "他们的愤怒通常直接，也可能很快过去。不要崩溃、操控或消失；尊重地站稳。",
+      self: ["在更用力推动前先问一问；强度不等于清晰。", "把脆弱当成信息，而不是软弱。", "用力量保护合作，而不只是赢。"],
+    },
+  },
+  9: {
+    en: {
+      communicate: [
+        "Create a calm tone and do not rush them into intensity.",
+        "Ask directly for their preference; silence does not mean agreement.",
+        "Summarize decisions clearly so harmony does not hide ambiguity.",
+      ],
+      manage: [
+        "Invite their voice early, especially before stronger personalities dominate.",
+        "Break work into clear next steps and timelines.",
+        "Notice quiet resistance or delay as useful information.",
+      ],
+      feedback: "Be gentle but clear. Explain why the issue matters and what concrete action is needed.",
+      conflict: "They may avoid tension to keep peace. Make conflict safe, specific, and connected to preserving the relationship.",
+      self: [
+        "State one preference before adapting to everyone else.",
+        "Start before you feel fully settled.",
+        "Treat honest disagreement as a way to protect connection, not destroy it.",
+      ],
+    },
+    zh: {
+      communicate: ["创造平稳语气，不要逼他们立刻进入强烈状态。", "直接问他们的偏好；沉默不等于同意。", "清楚总结决定，避免和谐掩盖模糊。"],
+      manage: ["早点邀请他们发声，尤其是在强势人格主导之前。", "把工作拆成清楚下一步和时间线。", "把安静的抗拒或拖延当成有用信息。"],
+      feedback: "温和但清楚。说明为什么这个问题重要，以及需要什么具体行动。",
+      conflict: "他们可能为了和平而回避紧张。让冲突安全、具体，并连接到保护关系。",
+      self: ["在适应所有人之前，先说出一个自己的偏好。", "在完全安定前先开始。", "把诚实分歧当成保护连接的方式，而不是破坏连接。"],
+    },
+  },
+};
+
+const careerGuide = {
+  1: {
+    en: {
+      career: [
+        "Best fit: roles where standards, accuracy, compliance, quality, or improvement matter.",
+        "They need ethical leadership, clear expectations, and authority to fix broken processes.",
+        "Watch out for burnout in messy workplaces where nobody owns mistakes.",
+      ],
+      jobs: ["Operations manager", "Quality assurance lead", "Compliance officer", "Editor", "Auditor", "Process improvement consultant"],
+    },
+    zh: {
+      career: ["最适合重视标准、准确性、合规、品质或改善的岗位。", "他们需要有伦理感的领导、清楚期待，以及修复坏流程的权限。", "如果环境混乱且没人承担错误，他们容易耗竭。"],
+      jobs: ["运营经理", "品质管理主管", "合规专员", "编辑", "审计", "流程改善顾问"],
+    },
+  },
+  2: {
+    en: {
+      career: [
+        "Best fit: people-facing roles where care, service, relationship-building, and trust matter.",
+        "They thrive when emotional labor is recognized instead of taken for granted.",
+        "Avoid roles that constantly reward overgiving without boundaries.",
+      ],
+      jobs: ["Customer success manager", "HR partner", "Counsellor", "Nurse", "Community manager", "Client relationship manager"],
+    },
+    zh: {
+      career: ["最适合需要关怀、服务、建立关系和信任的人际岗位。", "当情感劳动被看见，而不是被理所当然消耗时，他们最能发挥。", "避免长期奖励过度付出、没有边界的岗位。"],
+      jobs: ["客户成功经理", "人力资源伙伴", "咨询辅导员", "护理人员", "社群经理", "客户关系经理"],
+    },
+  },
+  3: {
+    en: {
+      career: [
+        "Best fit: goal-driven roles with measurable outcomes, visibility, and room to grow.",
+        "They need ambitious but meaningful targets, not empty status games.",
+        "They should choose work where authenticity and long-term value matter as much as speed.",
+      ],
+      jobs: ["Sales leader", "Founder", "Marketing strategist", "Product manager", "Business development manager", "Performance coach"],
+    },
+    zh: {
+      career: ["最适合目标明确、有可衡量成果、有曝光和成长空间的岗位。", "他们需要有野心但有意义的目标，而不是空洞的地位游戏。", "应该选择重视真实和长期价值，而不只是速度的工作。"],
+      jobs: ["销售主管", "创业者", "市场策略", "产品经理", "业务发展经理", "绩效教练"],
+    },
+  },
+  4: {
+    en: {
+      career: [
+        "Best fit: roles that use originality, emotional insight, aesthetics, storytelling, or brand meaning.",
+        "They need enough creative ownership plus clear deadlines and decision rules.",
+        "They should avoid environments that flatten identity or treat nuance as inefficiency.",
+      ],
+      jobs: ["Designer", "Writer", "Brand strategist", "Therapist", "Creative director", "UX researcher"],
+    },
+    zh: {
+      career: ["最适合运用原创性、情感洞察、审美、叙事或品牌意义的岗位。", "他们需要足够创意所有权，也需要清楚期限和决策规则。", "应避免压扁个性、把细腻视为低效率的环境。"],
+      jobs: ["设计师", "写作者", "品牌策略", "治疗师", "创意总监", "用户体验研究员"],
+    },
+  },
+  5: {
+    en: {
+      career: [
+        "Best fit: knowledge-heavy roles requiring research, systems thinking, privacy, and independent focus.",
+        "They need protected deep-work time and clear requests, not constant interruptions.",
+        "They should choose roles that require sharing insight, so expertise becomes useful impact.",
+      ],
+      jobs: ["Data analyst", "Software engineer", "Researcher", "Cybersecurity analyst", "Strategist", "Technical architect"],
+    },
+    zh: {
+      career: ["最适合重知识、研究、系统思考、隐私和独立专注的岗位。", "他们需要受保护的深度工作时间和清楚需求，而不是不断被打断。", "应选择需要分享洞察的岗位，让专业变成有用影响。"],
+      jobs: ["数据分析师", "软件工程师", "研究员", "网络安全分析师", "策略顾问", "技术架构师"],
+    },
+  },
+  6: {
+    en: {
+      career: [
+        "Best fit: roles involving risk, reliability, planning, troubleshooting, safety, or team protection.",
+        "They need transparent leadership and dependable systems.",
+        "They should avoid chaotic cultures where decisions change without explanation.",
+      ],
+      jobs: ["Project manager", "Risk analyst", "Operations coordinator", "Security specialist", "Legal assistant", "Emergency planner"],
+    },
+    zh: {
+      career: ["最适合涉及风险、可靠性、计划、排查、安全或团队保护的岗位。", "他们需要透明领导和可靠系统。", "应避免决策无解释频繁改变的混乱文化。"],
+      jobs: ["项目经理", "风险分析师", "运营协调", "安全专员", "法律助理", "应急规划"],
+    },
+  },
+  7: {
+    en: {
+      career: [
+        "Best fit: roles with variety, ideas, fast learning, networking, and possibility creation.",
+        "They need freedom plus clear finish lines, otherwise energy scatters.",
+        "They should choose work where optimism is useful but follow-through is measured.",
+      ],
+      jobs: ["Entrepreneur", "Innovation lead", "Event producer", "Travel or lifestyle marketer", "Creative strategist", "Partnerships manager"],
+    },
+    zh: {
+      career: ["最适合有变化、点子、快速学习、人脉和创造可能性的岗位。", "他们需要自由，也需要清楚完成线，否则能量会分散。", "应选择乐观有用、但也衡量完成度的工作。"],
+      jobs: ["创业者", "创新负责人", "活动制作", "旅游或生活方式营销", "创意策略", "合作伙伴经理"],
+    },
+  },
+  8: {
+    en: {
+      career: [
+        "Best fit: roles with authority, negotiation, crisis handling, protection, and decisive ownership.",
+        "They need autonomy, direct communication, and real stakes.",
+        "They should avoid highly political environments where power is hidden and honesty is punished.",
+      ],
+      jobs: ["General manager", "Founder", "Negotiator", "Lawyer", "Crisis manager", "Sales director"],
+    },
+    zh: {
+      career: ["最适合有权责、谈判、危机处理、保护他人和决断所有权的岗位。", "他们需要自主、直接沟通和真实利害关系。", "应避免权力隐藏、诚实被惩罚的高度政治环境。"],
+      jobs: ["总经理", "创业者", "谈判代表", "律师", "危机管理", "销售总监"],
+    },
+  },
+  9: {
+    en: {
+      career: [
+        "Best fit: roles requiring mediation, steady support, coordination, patience, and inclusive leadership.",
+        "They need calm structure, clear priorities, and managers who actively invite their voice.",
+        "They should avoid roles where conflict is constant but never resolved.",
+      ],
+      jobs: ["Mediator", "People operations", "Account manager", "Teacher", "Wellness coach", "Program coordinator"],
+    },
+    zh: {
+      career: ["最适合需要调解、稳定支持、协调、耐心和包容式领导的岗位。", "他们需要平稳结构、清楚优先级，以及会主动邀请他们发声的管理者。", "应避免冲突不断但从不解决的岗位。"],
+      jobs: ["调解员", "人事运营", "客户经理", "教师", "身心健康教练", "项目协调员"],
     },
   },
 };
@@ -658,9 +1065,11 @@ const els = {
   resultTitle: document.getElementById("result-title"),
   resultSummary: document.getElementById("result-summary"),
   resultGuidance: document.getElementById("result-guidance"),
+  resultManagement: document.getElementById("result-management"),
   scoreList: document.getElementById("score-list"),
   pizzaIndex: document.getElementById("pizza-index"),
   typeDirectory: document.getElementById("type-directory"),
+  managementDirectory: document.getElementById("management-directory"),
 };
 
 function translatePage() {
@@ -672,6 +1081,7 @@ function translatePage() {
   els.langBtns.forEach((btn) => btn.classList.toggle("active", btn.dataset.lang === state.lang));
   renderCurrentView();
   renderTypes();
+  renderManagement();
 }
 
 function setTab(tab) {
@@ -823,6 +1233,7 @@ function showResult() {
       : `${info.short} ${langCopy.likelyWing}: ${typeInfo[wing][state.lang].name}. Your ${langCopy.closestPatterns}: ${support}.`;
   els.resultGuidance.textContent = langCopy.resultGuidance;
   renderPizzaIndex(scores);
+  renderResultManagement(top.type);
 
   els.scoreList.innerHTML = "";
   scores.forEach((score) => {
@@ -835,6 +1246,54 @@ function showResult() {
     `;
     els.scoreList.appendChild(row);
   });
+}
+
+function listMarkup(items) {
+  return `<ul>${items.map((item) => `<li>${item}</li>`).join("")}</ul>`;
+}
+
+function renderGuideSections(type) {
+  const labels = copy[state.lang];
+  const guide = managementGuide[type][state.lang];
+  const career = careerGuide[type][state.lang];
+  return `
+    <div class="guide-section">
+      <strong>${labels.communicateLabel}</strong>
+      ${listMarkup(guide.communicate)}
+    </div>
+    <div class="guide-section">
+      <strong>${labels.manageLabel}</strong>
+      ${listMarkup(guide.manage)}
+    </div>
+    <div class="guide-section">
+      <strong>${labels.feedbackLabel}</strong>
+      <p>${guide.feedback}</p>
+    </div>
+    <div class="guide-section">
+      <strong>${labels.conflictLabel}</strong>
+      <p>${guide.conflict}</p>
+    </div>
+    <div class="guide-section guide-section-self">
+      <strong>${labels.selfImproveLabel}</strong>
+      ${listMarkup(guide.self)}
+    </div>
+    <div class="guide-section guide-section-career">
+      <strong>${labels.careerLabel}</strong>
+      ${listMarkup(career.career)}
+    </div>
+    <div class="guide-section">
+      <strong>${labels.suitableJobsLabel}</strong>
+      <div class="job-tags">${career.jobs.map((job) => `<span>${job}</span>`).join("")}</div>
+    </div>
+  `;
+}
+
+function renderResultManagement(type) {
+  const info = typeInfo[type][state.lang];
+  els.resultManagement.innerHTML = `
+    <div class="result-type-chip">${info.name}</div>
+    ${renderGuideSections(type)}
+  `;
 }
 
 function pointOnCircle(center, radius, index, total) {
@@ -931,6 +1390,27 @@ function renderTypes() {
       </div>
     `;
     els.typeDirectory.appendChild(card);
+  });
+}
+
+function renderManagement() {
+  els.managementDirectory.innerHTML = "";
+
+  Object.entries(typeInfo).forEach(([type, translations]) => {
+    const info = translations[state.lang];
+    const card = document.createElement("article");
+    card.className = "management-card";
+    card.innerHTML = `
+      <div class="management-card-header">
+        <span class="type-number">${type}</span>
+        <div>
+          <h2>${info.name}</h2>
+          <p>${info.short}</p>
+        </div>
+      </div>
+      ${renderGuideSections(type)}
+    `;
+    els.managementDirectory.appendChild(card);
   });
 }
 

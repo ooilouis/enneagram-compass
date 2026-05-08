@@ -9,10 +9,10 @@ const copy = {
     tabManage: "Management Guide",
     introTitle: "Find your Enneagram pattern with a focused, reflective test.",
     introBody:
-      "Answer 150 quick statements. Your result highlights your strongest type, likely wing, and next closest patterns.",
+      "Answer 150 quick statements in a shuffled deck, so the test feels fresher and your answers stay more instinctive.",
     questionsLabel: "questions",
     typesLabel: "types",
-    startTest: "Start test",
+    startTest: "Shuffle & start",
     previous: "Previous",
     reset: "Reset",
     completed: "Completed",
@@ -50,6 +50,14 @@ const copy = {
       "Agree",
       "Strongly agree",
     ],
+    funNotes: [
+      "Fresh card from the shuffled deck.",
+      "No pattern-spotting. Just answer honestly.",
+      "Tiny instinct check, big personality clue.",
+      "Go with your first real reaction.",
+      "The deck is mixing work, stress, and relationship clues.",
+      "Nice pace. Keep it light and honest.",
+    ],
     detailLabels: {
       desire: "Core desire",
       fear: "Core fear",
@@ -69,10 +77,10 @@ const copy = {
     tabTypes: "人格类型",
     tabManage: "管理指南",
     introTitle: "用一套专注的反思测试，找出你的九型人格模式。",
-    introBody: "回答150道简短陈述。结果会显示你的主要类型、可能翼型，以及最接近的几个模式。",
+    introBody: "回答150道已洗牌的简短陈述，让测试更有新鲜感，也让你的答案更接近直觉反应。",
     questionsLabel: "道题",
     typesLabel: "类型",
-    startTest: "开始测试",
+    startTest: "洗牌并开始",
     previous: "上一题",
     reset: "重新开始",
     completed: "已完成",
@@ -101,6 +109,14 @@ const copy = {
     resultGuidance:
       "请把结果当成自我观察地图，而不是固定标签。建议阅读前三高类型，比较哪一种核心恐惧最熟悉，也观察自己在放松和压力下的差异。",
     answers: ["非常不同意", "不同意", "普通", "同意", "非常同意"],
+    funNotes: [
+      "从洗好的题卡抽出这一题。",
+      "不用猜类型，诚实回答就好。",
+      "小小直觉反应，可能藏着大线索。",
+      "跟着第一真实反应走。",
+      "题卡正在混合工作、压力和关系线索。",
+      "节奏不错，轻松但诚实地答。",
+    ],
     detailLabels: {
       desire: "核心渴望",
       fear: "核心恐惧",
@@ -1026,13 +1042,6 @@ const prompts = {
   ],
 };
 
-const state = {
-  lang: localStorage.getItem("enneagram-lang") || "en",
-  tab: "test",
-  current: Number(localStorage.getItem("enneagram-current") || 0),
-  answers: JSON.parse(localStorage.getItem("enneagram-answers") || "{}"),
-};
-
 const questions = Object.entries(prompts)
   .flatMap(([type, items]) =>
     items.map((text, index) => ({
@@ -1043,6 +1052,37 @@ const questions = Object.entries(prompts)
     }))
   )
   .slice(0, TOTAL_QUESTIONS);
+
+function shuffleIndexes() {
+  const indexes = Array.from({ length: questions.length }, (_, index) => index);
+  for (let index = indexes.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [indexes[index], indexes[swapIndex]] = [indexes[swapIndex], indexes[index]];
+  }
+  return indexes;
+}
+
+function savedQuestionOrder() {
+  try {
+    const order = JSON.parse(localStorage.getItem("enneagram-question-order") || "[]");
+    const valid =
+      Array.isArray(order) &&
+      order.length === TOTAL_QUESTIONS &&
+      new Set(order).size === TOTAL_QUESTIONS &&
+      order.every((index) => Number.isInteger(index) && index >= 0 && index < TOTAL_QUESTIONS);
+    return valid ? order : shuffleIndexes();
+  } catch {
+    return shuffleIndexes();
+  }
+}
+
+const state = {
+  lang: localStorage.getItem("enneagram-lang") || "en",
+  tab: "test",
+  current: Number(localStorage.getItem("enneagram-current") || 0),
+  answers: JSON.parse(localStorage.getItem("enneagram-answers") || "{}"),
+  questionOrder: savedQuestionOrder(),
+};
 
 const els = {
   langBtns: document.querySelectorAll(".lang-btn"),
@@ -1061,6 +1101,7 @@ const els = {
   progressFill: document.getElementById("progress-fill"),
   questionKicker: document.getElementById("question-kicker"),
   questionText: document.getElementById("question-text"),
+  questionNote: document.getElementById("question-note"),
   answerGrid: document.getElementById("answer-grid"),
   resultTitle: document.getElementById("result-title"),
   resultSummary: document.getElementById("result-summary"),
@@ -1095,6 +1136,7 @@ function saveProgress() {
   localStorage.setItem("enneagram-lang", state.lang);
   localStorage.setItem("enneagram-current", String(state.current));
   localStorage.setItem("enneagram-answers", JSON.stringify(state.answers));
+  localStorage.setItem("enneagram-question-order", JSON.stringify(state.questionOrder));
 }
 
 function answeredCount() {
@@ -1125,22 +1167,25 @@ function renderCurrentView() {
 }
 
 function renderQuestion() {
-  const question = questions[state.current];
+  const question = questions[state.questionOrder[state.current]];
   const langCopy = copy[state.lang];
   const progress = Math.round(((state.current + 1) / TOTAL_QUESTIONS) * 100);
+  const funNote = langCopy.funNotes[state.current % langCopy.funNotes.length];
 
   if (state.lang === "zh") {
     els.progressLabel.textContent = `${langCopy.question}${state.current + 1}${langCopy.of}${TOTAL_QUESTIONS}题`;
-    els.questionKicker.textContent = `${langCopy.question}${state.current + 1}题`;
+    els.questionKicker.textContent = `${langCopy.question}${state.current + 1}题 - 已洗牌`;
   } else {
     els.progressLabel.textContent = `${langCopy.question} ${state.current + 1} ${langCopy.of} ${TOTAL_QUESTIONS}`;
-    els.questionKicker.textContent = `${langCopy.question} ${state.current + 1}`;
+    els.questionKicker.textContent = `${langCopy.question} ${state.current + 1} - shuffled`;
   }
 
   els.progressPercent.textContent = `${progress}%`;
   els.progressFill.style.width = `${progress}%`;
   els.questionText.textContent = question[state.lang];
+  els.questionNote.textContent = funNote;
   els.prevBtn.disabled = state.current === 0;
+  els.questionView.style.setProperty("--question-tilt", `${state.current % 2 === 0 ? -0.35 : 0.35}deg`);
 
   els.answerGrid.innerHTML = "";
   langCopy.answers.forEach((label, index) => {
@@ -1158,7 +1203,7 @@ function renderQuestion() {
 }
 
 function answerQuestion(value) {
-  const question = questions[state.current];
+  const question = questions[state.questionOrder[state.current]];
   state.answers[question.id] = value;
 
   if (state.current < TOTAL_QUESTIONS - 1) {
@@ -1180,6 +1225,7 @@ function previousQuestion() {
 function resetTest() {
   state.current = 0;
   state.answers = {};
+  state.questionOrder = shuffleIndexes();
   saveProgress();
   renderCurrentView();
 }

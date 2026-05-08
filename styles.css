@@ -301,6 +301,7 @@ button {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   animation: question-in 0.28s ease both;
+  transform: rotate(var(--question-tilt, 0deg));
 }
 
 .question-kicker {
@@ -320,6 +321,14 @@ button {
   letter-spacing: 0;
 }
 
+.question-note {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
 .answer-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -335,6 +344,23 @@ button {
   border: 1px solid rgba(23, 33, 33, 0.1);
   text-align: center;
   box-shadow: 0 8px 20px rgba(23, 33, 33, 0.04);
+  animation: answer-in 0.28s ease both;
+}
+
+.answer-btn:nth-child(2) {
+  animation-delay: 0.025s;
+}
+
+.answer-btn:nth-child(3) {
+  animation-delay: 0.05s;
+}
+
+.answer-btn:nth-child(4) {
+  animation-delay: 0.075s;
+}
+
+.answer-btn:nth-child(5) {
+  animation-delay: 0.1s;
 }
 
 .answer-btn strong,
@@ -762,11 +788,11 @@ button {
 @keyframes question-in {
   from {
     opacity: 0;
-    transform: translateX(14px);
+    transform: translateX(14px) rotate(var(--question-tilt, 0deg));
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0) rotate(var(--question-tilt, 0deg));
   }
 }
 
@@ -784,6 +810,17 @@ button {
 @keyframes answer-pop {
   50% {
     transform: scale(0.98);
+  }
+}
+
+@keyframes answer-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

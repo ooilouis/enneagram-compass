@@ -904,174 +904,624 @@ const typeInfo = {
 };
 
 const prompts = {
-  1: [
-    ["I notice errors quickly and feel responsible for correcting them.", "我很快注意到错误，并觉得自己有责任修正。"],
-    ["I feel uneasy when rules are ignored or standards slip.", "当规则被忽视或标准下降时，我会感到不安。"],
-    ["I often compare what is happening with what should be happening.", "我常把正在发生的事和应该发生的事做比较。"],
-    ["I push myself to do the right thing even when no one is watching.", "即使没人看见，我也会要求自己做正确的事。"],
-    ["I can be hard on myself when I make a mistake.", "当我犯错时，我可能会对自己很严厉。"],
-    ["I prefer clear procedures because they reduce careless outcomes.", "我喜欢清楚的流程，因为这样能减少粗心造成的结果。"],
-    ["I feel frustrated when people do not take responsibilities seriously.", "当别人不认真看待责任时，我会感到挫折。"],
-    ["I often see how something could be improved.", "我常看见事情可以如何改进。"],
-    ["I hold back anger because I want to stay composed.", "我会压住愤怒，因为我想保持端正冷静。"],
-    ["I respect people who are principled and consistent.", "我尊重有原则且前后一致的人。"],
-    ["I feel proud when I make something more accurate or fair.", "当我让事情更准确或更公平时，我会感到自豪。"],
-    ["I worry that relaxing too much will make me careless.", "我担心太放松会让我变得粗心。"],
-    ["I often know the correct way to handle a situation.", "我通常知道处理事情的正确方式。"],
-    ["I feel guilty when I do not meet my own expectations.", "当我达不到自己的期待时，我会感到内疚。"],
-    ["I prefer honest criticism over vague praise.", "比起模糊的赞美，我更喜欢诚实的批评。"],
-    ["I want my choices to reflect integrity.", "我希望自己的选择能体现正直。"],
-    ["I notice when small shortcuts create bigger problems later.", "我会注意到小捷径之后可能造成更大的问题。"],
+  "1": [
+    [
+      "I notice mistakes quickly.",
+      "我很快会看到错误。"
+    ],
+    [
+      "I like things done the right way.",
+      "我喜欢事情用正确方式完成。"
+    ],
+    [
+      "I feel responsible for fixing problems.",
+      "我觉得自己有责任解决问题。"
+    ],
+    [
+      "I get upset when people are careless.",
+      "别人粗心时，我会不舒服。"
+    ],
+    [
+      "I set high standards for myself.",
+      "我对自己要求很高。"
+    ],
+    [
+      "I like clear rules and steps.",
+      "我喜欢清楚的规则和步骤。"
+    ],
+    [
+      "I often think, this can be better.",
+      "我常觉得这件事可以更好。"
+    ],
+    [
+      "I try to do the right thing.",
+      "我会尽量做正确的事。"
+    ],
+    [
+      "I feel guilty when I fall short.",
+      "没达到标准时，我会内疚。"
+    ],
+    [
+      "I can be strict with myself.",
+      "我会对自己很严格。"
+    ],
+    [
+      "I prefer honest feedback.",
+      "我比较喜欢诚实的反馈。"
+    ],
+    [
+      "I dislike sloppy work.",
+      "我不喜欢马虎的工作。"
+    ],
+    [
+      "I want things to be fair.",
+      "我希望事情公平。"
+    ],
+    [
+      "I find it hard to relax when something is wrong.",
+      "事情不对时，我很难放松。"
+    ],
+    [
+      "I notice shortcuts that may cause problems.",
+      "我会注意到可能出问题的捷径。"
+    ],
+    [
+      "I respect people who keep their word.",
+      "我尊重说到做到的人。"
+    ],
+    [
+      "I want my choices to be ethical.",
+      "我希望自己的选择是正直的。"
+    ]
   ],
-  2: [
-    ["I naturally notice what other people need before they ask.", "我会自然地在别人开口前注意到他们需要什么。"],
-    ["I feel most connected when I am helping someone.", "当我帮助别人时，我最能感到连接。"],
-    ["I sometimes give more than I planned because I do not want to disappoint people.", "我有时会付出超过原本计划，因为不想让别人失望。"],
-    ["I remember personal details that make people feel cared for.", "我会记得让别人感到被关心的个人细节。"],
-    ["I feel hurt when my efforts are not appreciated.", "当我的付出没有被欣赏时，我会受伤。"],
-    ["I find it easier to support others than to ask for support.", "比起请求支持，我更容易支持别人。"],
-    ["I sense emotional shifts in a room quickly.", "我能很快察觉一个空间里的情绪变化。"],
-    ["I want people close to me to know I am there for them.", "我希望亲近的人知道我会陪在他们身边。"],
-    ["I sometimes struggle to know what I want apart from others' needs.", "有时除了别人的需要，我不太清楚自己真正想要什么。"],
-    ["I feel energized when someone depends on me.", "当有人依靠我时，我会感到有能量。"],
-    ["I try to make myself easy to love.", "我会努力让自己更容易被喜欢。"],
-    ["I may hint at my needs instead of stating them directly.", "我可能会暗示自己的需要，而不是直接说出来。"],
-    ["I can tell when someone needs encouragement.", "我能看出别人什么时候需要鼓励。"],
-    ["I often step in to make people feel welcome.", "我常主动让别人感到被欢迎。"],
-    ["I worry that saying no will damage the relationship.", "我担心说不之后会伤害关系。"],
-    ["I feel valued when people come to me for comfort.", "当别人来找我寻求安慰时，我会感到有价值。"],
-    ["I sometimes ignore my limits until I feel exhausted.", "我有时会忽略自己的界限，直到感到疲惫。"],
+  "2": [
+    [
+      "I notice what people need.",
+      "我会注意别人需要什么。"
+    ],
+    [
+      "Helping people makes me feel close to them.",
+      "帮助别人会让我觉得更亲近。"
+    ],
+    [
+      "I often give more than planned.",
+      "我常付出超过原本计划。"
+    ],
+    [
+      "I remember small things about people.",
+      "我会记得别人的小细节。"
+    ],
+    [
+      "I feel hurt when people do not appreciate me.",
+      "别人不感谢我时，我会受伤。"
+    ],
+    [
+      "It is easier to help than to ask for help.",
+      "帮助别人比开口求助容易。"
+    ],
+    [
+      "I can sense other people’s mood.",
+      "我能感觉到别人的情绪。"
+    ],
+    [
+      "I want loved ones to know I am there for them.",
+      "我希望亲近的人知道我支持他们。"
+    ],
+    [
+      "Sometimes I forget what I need.",
+      "我有时会忘记自己的需要。"
+    ],
+    [
+      "I feel useful when people depend on me.",
+      "别人依靠我时，我觉得自己有用。"
+    ],
+    [
+      "I try to be easy to like.",
+      "我会努力让别人喜欢我。"
+    ],
+    [
+      "I hint at my needs instead of saying them directly.",
+      "我会暗示需要，而不是直接说。"
+    ],
+    [
+      "I know when someone needs encouragement.",
+      "我知道别人什么时候需要鼓励。"
+    ],
+    [
+      "I make people feel welcome.",
+      "我会让别人觉得被欢迎。"
+    ],
+    [
+      "I worry that saying no will hurt the relationship.",
+      "我担心说不，会伤害关系。"
+    ],
+    [
+      "People often come to me for comfort.",
+      "别人常来找我寻求安慰。"
+    ],
+    [
+      "I give until I feel tired.",
+      "我会一直付出，直到很累。"
+    ]
   ],
-  3: [
-    ["I quickly identify what success looks like in a situation.", "我能很快看出一个情境中的成功标准是什么。"],
-    ["I feel motivated by goals, progress, and visible results.", "目标、进展和可见成果会激励我。"],
-    ["I adapt my presentation to fit the audience or environment.", "我会调整自己的表现方式以适应对象或环境。"],
-    ["I dislike feeling inefficient or unproductive.", "我不喜欢低效率或没有产出的感觉。"],
-    ["I often measure myself by what I have achieved.", "我常用自己的成就来衡量自己。"],
-    ["I can stay focused when there is a clear target.", "当目标清楚时，我能保持专注。"],
-    ["I want others to see me as capable.", "我希望别人认为我有能力。"],
-    ["I sometimes move past feelings so I can keep performing.", "我有时会越过情绪，好继续保持表现。"],
-    ["I notice what gets recognition and adjust accordingly.", "我会注意什么会被认可，并相应调整。"],
-    ["I become restless when progress is too slow.", "当进展太慢时，我会变得坐立不安。"],
-    ["I like turning plans into measurable outcomes.", "我喜欢把计划转化为可衡量的成果。"],
-    ["I feel embarrassed when I fail in front of others.", "当我在别人面前失败时，我会觉得难堪。"],
-    ["I can motivate people by making the goal feel achievable.", "我能让目标感觉可达，从而激励别人。"],
-    ["I sometimes avoid tasks where I might look incompetent.", "我有时会避开可能让我显得无能的任务。"],
-    ["I value excellence and momentum.", "我重视卓越和推进感。"],
-    ["I find it hard to rest without feeling behind.", "我很难休息而不觉得自己落后了。"],
-    ["I want my life to show meaningful accomplishment.", "我希望自己的人生能体现有意义的成就。"],
+  "3": [
+    [
+      "I quickly see what success looks like.",
+      "我很快知道怎样算成功。"
+    ],
+    [
+      "Goals and results motivate me.",
+      "目标和结果会激励我。"
+    ],
+    [
+      "I adjust myself to fit the situation.",
+      "我会调整自己来适应场合。"
+    ],
+    [
+      "I dislike wasting time.",
+      "我不喜欢浪费时间。"
+    ],
+    [
+      "I often judge myself by my achievements.",
+      "我常用成就衡量自己。"
+    ],
+    [
+      "A clear target helps me focus.",
+      "目标清楚时，我更专注。"
+    ],
+    [
+      "I want people to see me as capable.",
+      "我希望别人觉得我有能力。"
+    ],
+    [
+      "I may ignore feelings to keep going.",
+      "为了继续前进，我可能会忽略感受。"
+    ],
+    [
+      "I notice what gets praised.",
+      "我会注意什么会被称赞。"
+    ],
+    [
+      "Slow progress makes me restless.",
+      "进展太慢会让我着急。"
+    ],
+    [
+      "I like turning plans into results.",
+      "我喜欢把计划变成成果。"
+    ],
+    [
+      "Failing in public feels embarrassing.",
+      "在别人面前失败会让我尴尬。"
+    ],
+    [
+      "I can motivate people toward a goal.",
+      "我能激励别人朝目标前进。"
+    ],
+    [
+      "I avoid looking incompetent.",
+      "我会避免显得没能力。"
+    ],
+    [
+      "I value excellence and speed.",
+      "我重视优秀和速度。"
+    ],
+    [
+      "Resting can make me feel behind.",
+      "休息会让我觉得落后。"
+    ],
+    [
+      "I want to achieve something meaningful.",
+      "我想做出有意义的成就。"
+    ]
   ],
-  4: [
-    ["I often search for what feels authentic and personally meaningful.", "我常寻找真实且对我个人有意义的东西。"],
-    ["I notice subtle emotional tones that others may miss.", "我会注意到别人可能忽略的细微情绪。"],
-    ["I sometimes feel different from the people around me.", "我有时觉得自己和周围的人不一样。"],
-    ["I am drawn to beauty, symbolism, and emotional depth.", "我会被美感、象征意义和情感深度吸引。"],
-    ["I can feel longing for something that seems missing.", "我可能会渴望某种似乎缺失的东西。"],
-    ["I want my identity and choices to feel uniquely mine.", "我希望自己的身份和选择都是真正属于我的。"],
-    ["I may withdraw when I feel misunderstood.", "当我觉得不被理解时，我可能会退缩。"],
-    ["I value conversations that go beneath the surface.", "我重视能深入表面之下的对话。"],
-    ["I can become absorbed in a mood or memory.", "我可能会沉浸在某种情绪或回忆中。"],
-    ["I dislike being treated as ordinary or interchangeable.", "我不喜欢被当成普通或可替换的人。"],
-    ["I express myself through style, taste, or creative choices.", "我会透过风格、品味或创意选择表达自己。"],
-    ["I notice what is missing even when things are going well.", "即使事情顺利，我也会注意到缺少了什么。"],
-    ["I feel alive when I can be emotionally honest.", "当我能情感真实时，我会感到鲜活。"],
-    ["I sometimes compare my inner life to others' outer life.", "我有时会把自己的内在生活和别人的外在生活比较。"],
-    ["I need space to process my feelings fully.", "我需要空间完整处理自己的感受。"],
-    ["I am moved by art, music, stories, or atmosphere.", "艺术、音乐、故事或氛围很容易触动我。"],
-    ["I want to be seen for who I truly am.", "我希望别人看见真实的我。"],
+  "4": [
+    [
+      "I want to be true to myself.",
+      "我想忠于真实的自己。"
+    ],
+    [
+      "I notice feelings that others miss.",
+      "我会注意别人忽略的感受。"
+    ],
+    [
+      "I sometimes feel different from others.",
+      "我有时觉得自己和别人不一样。"
+    ],
+    [
+      "Beauty and meaning matter to me.",
+      "美感和意义对我很重要。"
+    ],
+    [
+      "I often feel something is missing.",
+      "我常觉得少了些什么。"
+    ],
+    [
+      "I want my choices to feel personal.",
+      "我希望选择能代表我自己。"
+    ],
+    [
+      "I pull away when I feel misunderstood.",
+      "觉得不被理解时，我会退开。"
+    ],
+    [
+      "I like deep conversations.",
+      "我喜欢有深度的对话。"
+    ],
+    [
+      "I can get stuck in a mood.",
+      "我可能会卡在某种情绪里。"
+    ],
+    [
+      "I dislike being treated as ordinary.",
+      "我不喜欢被当成普通人。"
+    ],
+    [
+      "I express myself through style or creativity.",
+      "我会用风格或创意表达自己。"
+    ],
+    [
+      "Even good moments can feel incomplete.",
+      "即使事情不错，我也可能觉得不完整。"
+    ],
+    [
+      "Being emotionally honest matters to me.",
+      "情感真实对我很重要。"
+    ],
+    [
+      "I compare my inner life with others’ lives.",
+      "我会拿自己的内心和别人的生活比较。"
+    ],
+    [
+      "I need time to process feelings.",
+      "我需要时间处理感受。"
+    ],
+    [
+      "Art, music, or stories move me.",
+      "艺术、音乐或故事容易触动我。"
+    ],
+    [
+      "I want people to see the real me.",
+      "我希望别人看见真实的我。"
+    ]
   ],
-  5: [
-    ["I need time alone to recharge and think clearly.", "我需要独处时间来恢复精力和清楚思考。"],
-    ["I prefer to understand something before getting involved.", "在参与之前，我喜欢先理解事情。"],
-    ["I protect my time, energy, and privacy carefully.", "我会谨慎保护自己的时间、精力和隐私。"],
-    ["I often observe before I speak.", "我通常先观察再发言。"],
-    ["I feel safer when I have enough information.", "当我有足够信息时，我会更有安全感。"],
-    ["I can detach emotionally to analyze a problem.", "我能从情绪中抽离，去分析问题。"],
-    ["I dislike being pressured to respond immediately.", "我不喜欢被逼着立刻回应。"],
-    ["I enjoy becoming deeply knowledgeable about a topic.", "我享受深入掌握某个主题。"],
-    ["I sometimes conserve energy by limiting social contact.", "我有时会减少社交接触来保存精力。"],
-    ["I would rather be competent than popular.", "比起受欢迎，我更希望自己有能力。"],
-    ["I often prepare privately before showing my work.", "我常在私下准备好之后才展示成果。"],
-    ["I can feel invaded when people demand too much access to me.", "当别人要求太多接触时，我会觉得被侵入。"],
-    ["I trust logic more than emotional pressure.", "比起情绪压力，我更信任逻辑。"],
-    ["I may delay action until I feel fully ready.", "我可能会等到完全准备好才行动。"],
-    ["I enjoy solving complex problems quietly.", "我享受安静地解决复杂问题。"],
-    ["I keep some parts of myself private even with close people.", "即使面对亲近的人，我也会保留一部分自己。"],
-    ["I feel capable when I can rely on my own understanding.", "当我能依靠自己的理解时，我会感到有能力。"],
+  "5": [
+    [
+      "I need alone time to recharge.",
+      "我需要独处来恢复精力。"
+    ],
+    [
+      "I like to understand before I act.",
+      "行动前，我想先理解清楚。"
+    ],
+    [
+      "I protect my time and energy.",
+      "我会保护自己的时间和精力。"
+    ],
+    [
+      "I observe before I speak.",
+      "我通常先观察再说话。"
+    ],
+    [
+      "Information makes me feel safer.",
+      "有信息会让我更安心。"
+    ],
+    [
+      "I can stay calm and analyze problems.",
+      "我能冷静分析问题。"
+    ],
+    [
+      "I dislike being rushed to answer.",
+      "我不喜欢被催着回答。"
+    ],
+    [
+      "I enjoy learning deeply.",
+      "我喜欢深入学习。"
+    ],
+    [
+      "Too much social time drains me.",
+      "太多社交会消耗我。"
+    ],
+    [
+      "I would rather be capable than popular.",
+      "比起受欢迎，我更想有能力。"
+    ],
+    [
+      "I prepare before showing my work.",
+      "展示成果前，我会先准备好。"
+    ],
+    [
+      "I dislike people demanding too much from me.",
+      "别人要求太多时，我会不舒服。"
+    ],
+    [
+      "Logic is important to me.",
+      "逻辑对我很重要。"
+    ],
+    [
+      "I wait until I feel ready.",
+      "我会等到准备好才行动。"
+    ],
+    [
+      "I enjoy solving hard problems quietly.",
+      "我喜欢安静解决难题。"
+    ],
+    [
+      "I keep some things private.",
+      "我会保留一些私人空间。"
+    ],
+    [
+      "I trust my own understanding.",
+      "我相信自己的理解。"
+    ]
   ],
-  6: [
-    ["I automatically think about what could go wrong.", "我会自动思考哪里可能出问题。"],
-    ["I value people and systems that are dependable.", "我重视可靠的人和系统。"],
-    ["I feel calmer when expectations and backup plans are clear.", "当期待和备用计划清楚时，我会更安心。"],
-    ["I test trust before giving it fully.", "在完全信任之前，我会先测试信任是否可靠。"],
-    ["I am loyal to people who have proven themselves.", "我会忠于那些证明过自己可靠的人。"],
-    ["I ask questions to reduce uncertainty.", "我会通过提问来减少不确定性。"],
-    ["I can be brave when someone I care about needs support.", "当我在乎的人需要支持时，我可以很勇敢。"],
-    ["I sometimes replay decisions to make sure I did not miss anything.", "我有时会反复回想决定，确认自己没有漏掉什么。"],
-    ["I notice inconsistencies that could become problems.", "我会注意到可能变成问题的不一致之处。"],
-    ["I want leaders to be transparent and accountable.", "我希望领导者透明且负责任。"],
-    ["I may seek reassurance when stakes feel high.", "当风险很高时，我可能会寻求保证。"],
-    ["I feel responsible for protecting the group.", "我觉得自己有责任保护团队。"],
-    ["I respect preparation more than blind confidence.", "比起盲目信心，我更尊重准备。"],
-    ["I can become suspicious when people are vague.", "当别人含糊不清时，我可能会起疑。"],
-    ["I feel torn between trusting authority and questioning it.", "我常在信任权威和质疑权威之间拉扯。"],
-    ["I want to know where I stand with people.", "我想知道自己和别人之间的关系位置。"],
-    ["I often imagine several possible outcomes before choosing.", "在选择前，我常会想象几种可能结果。"],
+  "6": [
+    [
+      "I think about what could go wrong.",
+      "我会想哪里可能出问题。"
+    ],
+    [
+      "I value reliable people.",
+      "我重视可靠的人。"
+    ],
+    [
+      "Clear plans make me calmer.",
+      "计划清楚会让我安心。"
+    ],
+    [
+      "I test trust before fully trusting.",
+      "完全信任前，我会先观察。"
+    ],
+    [
+      "I am loyal to people I trust.",
+      "我会忠于我信任的人。"
+    ],
+    [
+      "I ask questions to feel sure.",
+      "我会提问来确认。"
+    ],
+    [
+      "I can be brave for people I care about.",
+      "为了在乎的人，我可以很勇敢。"
+    ],
+    [
+      "I replay decisions in my head.",
+      "我会反复想自己的决定。"
+    ],
+    [
+      "I notice possible risks.",
+      "我会注意可能的风险。"
+    ],
+    [
+      "I want leaders to be honest and clear.",
+      "我希望领导诚实清楚。"
+    ],
+    [
+      "I ask for reassurance when stakes are high.",
+      "事情重要时，我会想确认。"
+    ],
+    [
+      "I feel responsible for protecting the group.",
+      "我觉得有责任保护团队。"
+    ],
+    [
+      "Preparation matters more than blind confidence.",
+      "准备比盲目信心重要。"
+    ],
+    [
+      "Vague answers make me suspicious.",
+      "含糊回答会让我怀疑。"
+    ],
+    [
+      "I question authority, but also want guidance.",
+      "我会质疑权威，也想要指引。"
+    ],
+    [
+      "I want to know where I stand with people.",
+      "我想知道别人怎么看我。"
+    ],
+    [
+      "I think through different outcomes before choosing.",
+      "选择前，我会想不同结果。"
+    ]
   ],
-  7: [
-    ["I look for options when life starts to feel restricted.", "当生活开始有受限感时，我会寻找更多选择。"],
-    ["I am energized by new ideas, plans, and possibilities.", "新点子、计划和可能性会让我有能量。"],
-    ["I can reframe difficulties into something more hopeful.", "我能把困难重新看成更有希望的事。"],
-    ["I dislike feeling trapped in boredom or pain.", "我不喜欢被困在无聊或痛苦中。"],
-    ["I often have more plans than time.", "我的计划常比时间更多。"],
-    ["I bring lightness or humor into heavy situations.", "我会在沉重情境中带入轻松或幽默。"],
-    ["I can become restless when there is no variety.", "没有变化时，我可能会坐立不安。"],
-    ["I prefer to keep my future open.", "我喜欢让未来保持开放。"],
-    ["I move quickly from one interesting thing to another.", "我会很快从一个有趣的事转向另一个。"],
-    ["I sometimes avoid painful feelings by staying busy.", "我有时会通过忙碌来避开痛苦感受。"],
-    ["I enjoy brainstorming and connecting ideas.", "我享受头脑风暴和连接想法。"],
-    ["I resist commitments that feel limiting.", "我会抗拒让我觉得受限的承诺。"],
-    ["I want life to feel expansive and alive.", "我希望生活感觉开阔且有生命力。"],
-    ["I can inspire others with enthusiasm.", "我能用热情感染别人。"],
-    ["I feel anxious when I have no enjoyable option ahead.", "当眼前没有令人期待的选择时，我会焦虑。"],
-    ["I often choose possibility over predictability.", "我常选择可能性，而不是可预测性。"],
+  "7": [
+    [
+      "I look for options when I feel stuck.",
+      "觉得被困住时，我会找选择。"
+    ],
+    [
+      "New ideas give me energy.",
+      "新点子会让我有能量。"
+    ],
+    [
+      "I try to see the bright side.",
+      "我会尽量看好的一面。"
+    ],
+    [
+      "I dislike boredom and pain.",
+      "我不喜欢无聊和痛苦。"
+    ],
+    [
+      "I often have too many plans.",
+      "我常有太多计划。"
+    ],
+    [
+      "I use humor in serious moments.",
+      "严肃时，我会用幽默缓和。"
+    ],
+    [
+      "I get restless without variety.",
+      "没有变化时，我会坐不住。"
+    ],
+    [
+      "I like keeping my options open.",
+      "我喜欢保留选择。"
+    ],
+    [
+      "I move quickly to the next interesting thing.",
+      "我会很快转向下一个有趣的事。"
+    ],
+    [
+      "I stay busy to avoid painful feelings.",
+      "我会用忙碌避开痛苦感受。"
+    ],
+    [
+      "I enjoy sharing new ideas.",
+      "我喜欢一起想新点子。"
+    ],
+    [
+      "I resist commitments that feel limiting.",
+      "让我受限的承诺，我会抗拒。"
+    ],
+    [
+      "I want life to feel exciting.",
+      "我希望生活有趣又有活力。"
+    ],
+    [
+      "My enthusiasm can inspire people.",
+      "我的热情能感染别人。"
+    ],
+    [
+      "I feel anxious with nothing to look forward to.",
+      "没有期待的事时，我会焦虑。"
+    ],
+    [
+      "I prefer new possibilities over fixed routines.",
+      "比起固定日常，我更喜欢新可能。"
+    ]
   ],
-  8: [
-    ["I respect directness and dislike hidden agendas.", "我尊重直接，也不喜欢隐藏动机。"],
-    ["I move toward conflict when something important is at stake.", "当重要事情受到威胁时，我会走向冲突。"],
-    ["I want control over my own life and choices.", "我希望掌控自己的人生和选择。"],
-    ["I protect people who are being treated unfairly.", "我会保护受到不公平对待的人。"],
-    ["I can be intense when I care about something.", "当我在乎某件事时，我可能会很强烈。"],
-    ["I dislike feeling vulnerable or dependent.", "我不喜欢脆弱或依赖的感觉。"],
-    ["I prefer honest disagreement to polite avoidance.", "比起礼貌回避，我更喜欢诚实的不同意见。"],
-    ["I quickly sense who has power in a situation.", "我能很快感觉到一个情境中谁有力量。"],
-    ["I can make decisions under pressure.", "我能在压力下做决定。"],
-    ["I push back when someone tries to control me.", "当有人试图控制我时，我会反击。"],
-    ["I value strength, courage, and loyalty.", "我重视力量、勇气和忠诚。"],
-    ["I sometimes overwhelm others without intending to.", "我有时会在无意中压迫到别人。"],
-    ["I would rather face the truth than pretend everything is fine.", "比起假装一切都好，我更愿意面对真相。"],
-    ["I feel responsible for keeping myself and my people safe.", "我觉得自己有责任保护自己和自己人。"],
-    ["I dislike being manipulated.", "我不喜欢被操控。"],
-    ["I trust action more than empty talk.", "比起空谈，我更信任行动。"],
+  "8": [
+    [
+      "I like direct communication.",
+      "我喜欢直接沟通。"
+    ],
+    [
+      "I face conflict when it matters.",
+      "重要时，我会面对冲突。"
+    ],
+    [
+      "I want control over my own choices.",
+      "我想掌控自己的选择。"
+    ],
+    [
+      "I protect people who are treated unfairly.",
+      "我会保护被不公平对待的人。"
+    ],
+    [
+      "I can be intense when I care.",
+      "在乎时，我会很强烈。"
+    ],
+    [
+      "I dislike feeling weak or dependent.",
+      "我不喜欢软弱或依赖。"
+    ],
+    [
+      "I prefer honest disagreement.",
+      "我喜欢诚实的不同意见。"
+    ],
+    [
+      "I notice who has power.",
+      "我会注意谁有权力。"
+    ],
+    [
+      "I can decide under pressure.",
+      "压力下我也能做决定。"
+    ],
+    [
+      "I push back when controlled.",
+      "被控制时，我会反击。"
+    ],
+    [
+      "I value strength and loyalty.",
+      "我重视力量和忠诚。"
+    ],
+    [
+      "I may overwhelm people without meaning to.",
+      "我可能无意中给别人压力。"
+    ],
+    [
+      "I prefer truth over pretending.",
+      "比起假装，我更想面对真相。"
+    ],
+    [
+      "I feel responsible for protecting my people.",
+      "我觉得要保护自己人。"
+    ],
+    [
+      "I dislike being manipulated.",
+      "我不喜欢被操控。"
+    ],
+    [
+      "I trust action more than talk.",
+      "比起说，我更相信行动。"
+    ]
   ],
-  9: [
-    ["I can see many sides of an issue.", "我能看见一件事的多个角度。"],
-    ["I prefer harmony and become uncomfortable with tension.", "我喜欢和谐，并会对紧张气氛感到不舒服。"],
-    ["I sometimes go along with others to keep peace.", "我有时会顺着别人来维持和平。"],
-    ["I need a steady pace to feel settled.", "我需要稳定节奏才会感到安定。"],
-    ["I can forget my own priorities when others are forceful.", "当别人很强势时，我可能会忘记自己的优先事项。"],
-    ["I am good at calming people down.", "我很擅长让别人冷静下来。"],
-    ["I avoid conflict until it becomes hard to ignore.", "我会回避冲突，直到它难以忽视。"],
-    ["I want everyone to feel included.", "我希望每个人都感到被包含。"],
-    ["I can delay decisions because I do not want disruption.", "我可能会因为不想造成扰动而延迟决定。"],
-    ["I feel most comfortable when life is peaceful.", "当生活平和时，我最舒服。"],
-    ["I often minimize my anger or preferences.", "我常淡化自己的愤怒或偏好。"],
-    ["I bring patience to tense situations.", "我能把耐心带入紧张情境。"],
-    ["I dislike being rushed into intensity.", "我不喜欢被催促进入强烈状态。"],
-    ["I can merge with routines that make life easier.", "我容易融入让生活更轻松的日常。"],
-    ["I want connection without pressure.", "我想要没有压力的连接。"],
-    ["I sometimes need help naming what I truly want.", "我有时需要帮助才能说出自己真正想要什么。"],
-  ],
+  "9": [
+    [
+      "I can see many points of view.",
+      "我能看到很多角度。"
+    ],
+    [
+      "I prefer peace over tension.",
+      "比起紧张，我更喜欢和平。"
+    ],
+    [
+      "I go along to keep peace.",
+      "为了和谐，我会配合别人。"
+    ],
+    [
+      "A steady pace helps me feel calm.",
+      "稳定节奏会让我安心。"
+    ],
+    [
+      "Strong people can make me forget my own priorities.",
+      "别人太强势时，我会忘记自己的优先。"
+    ],
+    [
+      "I am good at calming people.",
+      "我擅长让别人冷静。"
+    ],
+    [
+      "I avoid conflict until I must face it.",
+      "我会回避冲突，直到不得不面对。"
+    ],
+    [
+      "I want everyone to feel included.",
+      "我希望每个人都被包含。"
+    ],
+    [
+      "I delay decisions to avoid trouble.",
+      "为了避免麻烦，我会拖延决定。"
+    ],
+    [
+      "I feel best when life is peaceful.",
+      "生活平和时，我感觉最好。"
+    ],
+    [
+      "I downplay my anger or preferences.",
+      "我会淡化自己的愤怒或偏好。"
+    ],
+    [
+      "I stay patient in tense situations.",
+      "紧张时，我能保持耐心。"
+    ],
+    [
+      "I dislike being rushed.",
+      "我不喜欢被催。"
+    ],
+    [
+      "I settle into easy routines.",
+      "我容易进入轻松的日常。"
+    ],
+    [
+      "I want connection without pressure.",
+      "我想要没有压力的连接。"
+    ],
+    [
+      "I sometimes need help knowing what I want.",
+      "我有时需要别人帮我弄清自己想要什么。"
+    ]
+  ]
 };
 
 const questions = Object.entries(prompts)
@@ -1085,24 +1535,67 @@ const questions = Object.entries(prompts)
   )
   .slice(0, TOTAL_QUESTIONS);
 
-function shuffleIndexes() {
-  const indexes = Array.from({ length: questions.length }, (_, index) => index);
-  for (let index = indexes.length - 1; index > 0; index -= 1) {
+const QUESTION_ORDER_VERSION = "direct-balanced-v3";
+
+function randomize(items) {
+  const shuffled = [...items];
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
     const swapIndex = Math.floor(Math.random() * (index + 1));
-    [indexes[index], indexes[swapIndex]] = [indexes[swapIndex], indexes[index]];
+    [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
   }
-  return indexes;
+  return shuffled;
+}
+
+function shuffleIndexes() {
+  const pools = new Map();
+  questions.forEach((question, index) => {
+    if (!pools.has(question.type)) {
+      pools.set(question.type, []);
+    }
+    pools.get(question.type).push(index);
+  });
+
+  pools.forEach((indexes, type) => {
+    pools.set(type, randomize(indexes));
+  });
+
+  const order = [];
+  const recentWindow = 3;
+
+  while (order.length < questions.length) {
+    const roundTypes = randomize(
+      [...pools.entries()].filter(([, indexes]) => indexes.length > 0).map(([type]) => type)
+    );
+    const recentTypes = order.slice(-recentWindow).map((index) => questions[index].type);
+    const arrangedTypes = [];
+
+    while (roundTypes.length > 0) {
+      const activeRecentTypes = [...recentTypes, ...arrangedTypes].slice(-recentWindow);
+      const openTypes = roundTypes.filter((type) => !activeRecentTypes.includes(type));
+      const candidates = openTypes.length > 0 ? openTypes : roundTypes;
+      const chosen = candidates[Math.floor(Math.random() * candidates.length)];
+      arrangedTypes.push(chosen);
+      roundTypes.splice(roundTypes.indexOf(chosen), 1);
+    }
+
+    arrangedTypes.forEach((type) => {
+      order.push(pools.get(type).pop());
+    });
+  }
+
+  return order;
 }
 
 function savedQuestionOrder() {
   try {
+    const savedVersion = localStorage.getItem("enneagram-question-order-version");
     const order = JSON.parse(localStorage.getItem("enneagram-question-order") || "[]");
     const valid =
       Array.isArray(order) &&
       order.length === TOTAL_QUESTIONS &&
       new Set(order).size === TOTAL_QUESTIONS &&
       order.every((index) => Number.isInteger(index) && index >= 0 && index < TOTAL_QUESTIONS);
-    return valid ? order : shuffleIndexes();
+    return valid && savedVersion === QUESTION_ORDER_VERSION ? order : shuffleIndexes();
   } catch {
     return shuffleIndexes();
   }
@@ -1169,6 +1662,7 @@ function saveProgress() {
   localStorage.setItem("enneagram-current", String(state.current));
   localStorage.setItem("enneagram-answers", JSON.stringify(state.answers));
   localStorage.setItem("enneagram-question-order", JSON.stringify(state.questionOrder));
+  localStorage.setItem("enneagram-question-order-version", QUESTION_ORDER_VERSION);
 }
 
 function answeredCount() {
